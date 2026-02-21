@@ -13,7 +13,7 @@ def test_check_tickets(capsys):
     our_ticket = {"JJB" : [1,45,33]}
     work_lottery_functions.check_tickets(unique_numbers,our_ticket)
     captured = capsys.readouterr()
-    assert captured.out == "JJB needs 1 number(s) ticked off, these are: [1]\n"
+    assert captured.out == "******************\nJJB needs 1 number(s) ticked off, these are: [1]\n"
 
 def test_dud_ticket(capsys):
     """test to see if program will ignore my ticket if it has no common numbers this week"""

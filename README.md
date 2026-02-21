@@ -5,4 +5,4 @@ This was a side project I did for my work in a bar, we had a game where you woul
 It's not complex but gets the job done. It asks for the seven "real" lottery numbers this week then it checks if the current weeks numbers have been called already by using a CSV file which will have our previous numbers.
 Then it takes our tickets and checks who has winning numbers this week. After it has done that it then tells us who has winning numbers, and skips who does not (as that will be useless information). After that, it then saves our new numbers back into our CSV, then the next week it is used, next week's numbers will be compared with our numbers as well as previous numbers to check any unique numbers that have been drawn to do the same thing again.
 
-### a function to wipe the CSV file will be made soon
+### a function to wipe the CSV file included

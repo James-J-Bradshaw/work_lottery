@@ -26,13 +26,14 @@ def check_tickets(unique_numbers,our_tickets):
     ticket_numbers = our_tickets.values()
     for ticket in ticket_numbers:
         winners = []
+        name = [key for key, val in our_tickets.items() if val == ticket]
         for number in ticket:
             if number in unique_numbers:
                 winners.append(number)
-                name = [key for key, val in our_tickets.items() if val == ticket]
                 chosen = name
                 chosen = chosen[0]
         if len(winners) >= 1:
+            print("******************")
             print(f"{chosen} needs {len(winners)} number(s) ticked off, these are: {winners}")
         else:
             pass
@@ -46,3 +47,7 @@ def sorting_week_and_prev_numbers(week_numbers, previous_numbers):
 
     
     return unique_numbers, previous_numbers
+
+def clear_previous_numbers(previous_numbers):
+    previous_numbers = []
+    return previous_numbers

@@ -16,11 +16,28 @@ prev_numbers = work_lottery_functions.read_file(file)
 
 number_position = ["first", "second", "third", "fourth", "fith", "sixth", "seventh"]
 
-print("press 'q' at any time to quit application")
+print("******************")
+print("Enter 'q' at any time to quit application")
+print("Enter 'w' at any time to wipe the previous numer list for new")
 while len(week_numbers) < 7:
     number = input(f"What was the {number_position[len(week_numbers)]} number this week: ")
     if number == "q":
         break
+    if number == "w":
+        print("******************")
+        while True:
+            choice = input("are you sure you want to wipe the previous numbers from the list \nPress Y/N for Yes or no: ")
+            choice.lower()
+            if choice == "y":
+                prev_numbers = work_lottery_functions.clear_previous_numbers(prev_numbers)
+                work_lottery_functions.write_numbers(file, prev_numbers)
+                print("******************")
+                break
+            if choice == "n":
+                print("******************")
+                break
+            else:
+                print("you must answer with 'y' or 'n'.")
     else:
         try:
             number = int(number)
@@ -28,6 +45,7 @@ while len(week_numbers) < 7:
         except ValueError:
             print("What was inputted, was not a number.")
 if len(week_numbers) == 7:
+    print("******************")
     unique_numbers, prev_numbers = work_lottery_functions.sorting_week_and_prev_numbers(week_numbers, prev_numbers)
     work_lottery_functions.check_tickets(unique_numbers, our_tickets)
     work_lottery_functions.write_numbers(file, week_numbers)
